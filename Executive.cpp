@@ -1,4 +1,5 @@
 #include "Executive.h"
+using namespace std;
 
 
 Executive::Executive()
@@ -23,11 +24,20 @@ Executive::Executive(std::string row, std::string col, std::string numMines)
 
 void Executive::run()
 {
+	// int m_row=0;
+	// int m_col=0;
+	// int m_mines=0;
 	std::cout<<"Welcome to Minesweeper!\n";
+	// cout<<"input the row\n";
+	// cin>>m_row;
+	// cout<<"input the col\n";
+	// cin>>m_col;
+	// cout<<"input the mines\n";
+	// cin>>m_mines;
 	Minesweeper sweep(m_row, m_col, m_mines);
 	int row=0;
 	int col=0;
-	std::string choice="";
+	std::string choice=" ";
 	while(true)
 	{
 		//std::cout<<"Would you like to pick a spot or flag a spot, or exit?  (pick/flag/exit)\n";
@@ -51,7 +61,9 @@ void Executive::run()
 			std::cin>>col;
 			if(sweep.Revealing(row,col)==false)
 			{
+				sweep.print2();
 				std::cout<<"Sorry.You lose!";
+				// sweep.print2();
 				break;
 			}
 		}

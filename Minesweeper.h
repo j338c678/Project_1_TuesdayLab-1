@@ -16,13 +16,13 @@ private:
   string** Bboard;
 
   int NumOfFlag;// The number of the right flags.
-  /* 
+  /*
    * @pre:  Bboard was successfully created.
    * @post: Set the mines on Bboard randomly.
    * @param:Number of mines(int).
    */
   void setMines(int mines);
-  /* 
+  /*
    * @pre:  A valid input position.
    * @post: If there are mines adjacent to the target position, set the position's
    *        content to number returned from Check method.Otherwise, recursively
@@ -30,16 +30,16 @@ private:
    * @param:The target position's Row and Col(int).
    */
   void RecCheck(int Row, int Col);
-  /* 
+  /*
    * @pre:  A valid input position.
    * @post: If there are mines adjacent to the target position,
    *        set the position's content to number of mines adjacent to it.
    * @param:The target position's Row and Col(int).
    */
   int Check(int Row, int Col);
-  
 
-  
+
+
 
 public:
   /*
@@ -52,6 +52,8 @@ public:
   ~Minesweeper();
 
   void print();
+
+  void print2();
 
   /*
    * @pre:  A valid input position.

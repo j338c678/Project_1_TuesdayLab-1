@@ -52,7 +52,7 @@ void Minesweeper::setMines(int mines)
   {
     int tempRow = rand() % (m_row-1);
     int tempCol = rand() % (m_col-1);
-    cout<<tempRow<<tempCol<<"\n";
+    // cout<<tempRow<<tempCol<<"\n";
     //set the mine is the block is blank, otherwise keep looping
     if(Bboard[tempRow][tempCol] == "■")
     {
@@ -76,7 +76,7 @@ bool Minesweeper::Marking(int Row, int Col, int option)
       }
       else
       {
-        cout<<NumOfFlag<<"\n";
+        //cout<<NumOfFlag<<"\n";
       return(false);// Condetion2:set one flag on the correct position.
       }
     }
@@ -244,22 +244,22 @@ void Minesweeper::RecCheck(int Row, int Col)
 
 void Minesweeper::print()
 {
-	cout<<"  ";
-	for(int k=0;k<m_row; k++)
+	cout<<"   ";
+	for(int k=0;k<m_col; k++)
 	{
-    if(k>=10)
+    if(k>9)
     {
-		    cout<<" "<<k<<" ";
-    }
-    else
-    {
-        cout<<" "<<k<<"  ";
-    }
+		   cout<<k<<" ";
+     }
+     else
+     {
+       cout<<k<<"  ";
+     }
 	}
-	cout<<endl;
+	cout<<"\n\n";
 	for(int i=0; i<m_row; i++)
 	{
-    if(i>=10)
+    if(i>9)
     {
 		    cout<<i<<" ";
     }
@@ -269,10 +269,41 @@ void Minesweeper::print()
     }
 		for(int j=0; j<m_col; j++)
 		{
-
-			cout<<Uboard[i][j]<<"   ";
-
+			cout<<Uboard[i][j]<<"  ";
 		}
-		cout<<"\n\n";
+		cout<<"\n";
+	}
+}
+
+void Minesweeper::print2()
+{
+  cout<<"   ";
+	for(int k=0;k<m_col; k++)
+	{
+    if(k>9)
+    {
+		   cout<<k<<" ";
+     }
+     else
+     {
+       cout<<k<<"  ";
+     }
+	}
+	cout<<"\n\n";
+	for(int i=0; i<m_row; i++)
+	{
+    if(i>9)
+    {
+		    cout<<i<<" ";
+    }
+    else
+    {
+        cout<<i<<"  ";
+    }
+		for(int j=0; j<m_col; j++)
+		{
+			cout<<Bboard[i][j]<<"  ";
+		}
+		cout<<"\n";
 	}
 }
